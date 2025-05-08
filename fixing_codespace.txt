@@ -11,4 +11,4 @@ this doesn't work you get the error:
 RuntimeError: Your system has an unsupported version of sqlite3. Chroma requires sqlite3 >= 3.35.0.
 which sucks, the docs don't help either
 
-https://github.com/crewAIInc/crewAI/issues/989
+ok I'm going to try changing the image for the codespace
