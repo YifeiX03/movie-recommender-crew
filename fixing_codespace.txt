@@ -12,3 +12,11 @@ RuntimeError: Your system has an unsupported version of sqlite3. Chroma requires
 which sucks, the docs don't help either
 
 ok I'm going to try changing the image for the codespace
+to do this, in vscode go to the top bar and do 
+```
+>add dev
+```
+and go for Codespaces: Add Dev Container Configuration Files.
+then go for python3.11-bookworm
+
+and then do the openai set up stuff
