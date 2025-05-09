@@ -1,17 +1,50 @@
-research_task:
-  description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
-  expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+# research_task:
+#   description: >
+#     Conduct a thorough research about {topic}
+#     Make sure you find any interesting and relevant information given
+#     the current year is {current_year}.
+#   expected_output: >
+#     A list with 10 bullet points of the most relevant information about {topic}
+#   agent: researcher
 
-reporting_task:
+# reporting_task:
+#   description: >
+#     Review the context you got and expand each topic into a full section for a report.
+#     Make sure the report is detailed and contains any and all relevant information.
+#   expected_output: >
+#     A fully fledged report with the main topics, each with a full section of information.
+#     Formatted as markdown without '```'
+#   agent: reporting_analyst
+
+analyst_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Extract information from the user about what kind of movie they want to watch.
+    Ensure extracted text is accurate and complete and ready for further analysis and processing.
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    Summary of the user's preferences including information such as
+    Genre, Themes, Release Date.
+  agent: analyst
+
+consultant_task:
+  description: >
+    Consult database for movies that match the descriptions provided.
+  expected_output: >
+    A list of movie names and a short explanation for why they were chosen.
+  agent: consultant
+
+searcher_task:
+  description: >
+    Given a list of movies, determine which ones are available in theatres currently,
+    and report back on their availability.
+  expected_output: >
+    List of movie names and where they can be watched.
+  agent: searcher
+
+summarizer_task:
+  description: >
+    Given the list of movies and an explanation of why they were chosen, as well as where to find them,
+    summarize the information and report back to the user in an easy to read report.
+  expected_output: >
+    A report of the chosen movies, a summary of why they would be a good match for the user, and where to watch them.
+    Formatted as markdown without '````'
+  agent: summarizer

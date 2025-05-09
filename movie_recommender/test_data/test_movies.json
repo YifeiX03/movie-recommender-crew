@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Get Out",
+    "release_date": "2017-02-24",
+    "genre": ["Horror", "Thriller"],
+    "description": "A young Black man visits his white girlfriend's family estate, uncovering a disturbing secret. Jordan Peele's directorial debut blends psychological horror with sharp social commentary."
+  },
+  {
+    "title": "Spider-Man: Into the Spider-Verse",
+    "release_date": "2018-12-14",
+    "genre": ["Animation", "Action", "Adventure"],
+    "description": "Teenager Miles Morales becomes Spider-Man and joins forces with counterparts from other dimensions to save the multiverse. Acclaimed for its innovative animation and storytelling."
+  },
+  {
+    "title": "Parasite",
+    "release_date": "2019-05-30",
+    "genre": ["Thriller", "Drama"],
+    "description": "A poor family schemes to become employed by a wealthy household, leading to unexpected consequences. Bong Joon-ho's Oscar-winning film satirizes class dynamics with humor and suspense."
+  },
+  {
+    "title": "Knives Out",
+    "release_date": "2019-11-27",
+    "genre": ["Mystery", "Comedy", "Crime"],
+    "description": "Detective Benoit Blanc investigates the death of a wealthy novelist, unraveling family secrets and lies in this modern whodunit."
+  },
+  {
+    "title": "Lady Bird",
+    "release_date": "2017-11-03",
+    "genre": ["Drama", "Coming-of-Age"],
+    "description": "A high school senior navigates love, family, and self-identity in Sacramento, California. Greta Gerwig's directorial debut captures the nuances of adolescence."
+  },
+  {
+    "title": "Dunkirk",
+    "release_date": "2017-07-21",
+    "genre": ["War", "Action", "Drama"],
+    "description": "Allied soldiers are evacuated from Dunkirk during World War II in this intense, immersive war film directed by Christopher Nolan."
+  },
+  {
+    "title": "Eighth Grade",
+    "release_date": "2018-07-13",
+    "genre": ["Comedy", "Drama"],
+    "description": "An introverted teenage girl attempts to survive the last week of her disastrous eighth-grade year before starting high school. A poignant look at adolescence in the age of social media."
+  },
+  {
+    "title": "Ford v Ferrari",
+    "release_date": "2019-11-15",
+    "genre": ["Action", "Biography", "Drama"],
+    "description": "American car designer Carroll Shelby and driver Ken Miles battle corporate interference and the laws of physics to build a revolutionary race car for Ford, challenging Ferrari at Le Mans."
+  },
+  {
+    "title": "The Florida Project",
+    "release_date": "2017-10-06",
+    "genre": ["Drama"],
+    "description": "A six-year-old girl lives with her rebellious mother in a budget motel near Disney World, exploring childhood innocence amidst poverty."
+  },
+  {
+    "title": "The Handmaiden",
+    "release_date": "2016-10-14",
+    "genre": ["Drama", "Romance", "Thriller"],
+    "description": "In 1930s Korea, a con man hires a pickpocket to become the maid of a Japanese heiress, intending to defraud her, but unexpected emotions complicate their plan."
+  }
+]
