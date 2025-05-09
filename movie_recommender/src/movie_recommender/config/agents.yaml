@@ -24,6 +24,7 @@ analyst:
   goal: >
     To accurately extract and understand a user's cinematic tastes from natural language inputs,
     enabling personalized movie recommendations that align with their preferences.
+    The query is: {query}
   backstory: >
     You are able to keenly discern the movie tastes of a person from their language.
 
@@ -31,7 +32,8 @@ consultant:
   role: >
     Movie Matchmaker Agent
   goal: >
-    To query a structured movie database and return films that align with the extracted preferences provided.
+    To query a structured movie knowledge base and return films that align with the extracted preferences provided.
+    Only use movies from the knowledge base.
   backstory: >
     Designed to work in tandem with a preference-analyzing AI, 
     this agent specializes in semantic search and filtering across curated movie datasets. It's optimized for

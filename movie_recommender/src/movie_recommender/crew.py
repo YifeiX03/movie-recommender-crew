@@ -9,6 +9,12 @@ from crewai.knowledge.source.json_knowledge_source import JSONKnowledgeSource
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
+serper_dev_tool = SerperDevTool()
+json_source = JSONKnowledgeSource(
+    file_paths=["test_movies.json",
+                "recent_test_movies.json"]
+)
+
 
 @CrewBase
 class MovieRecommender():
@@ -23,35 +29,90 @@ class MovieRecommender():
 
     # If you would like to add tools to your agents, you can learn more about it here:
     # https://docs.crewai.com/concepts/agents#agent-tools
+    # @agent
+    # def researcher(self) -> Agent:
+    #     return Agent(
+    #         config=self.agents_config['researcher'],  # type: ignore[index]
+    #         verbose=True
+    #     )
+
+    # @agent
+    # def reporting_analyst(self) -> Agent:
+    #     return Agent(
+    #         # type: ignore[index]
+    #         config=self.agents_config['reporting_analyst'],
+    #         verbose=True
+    #     )
     @agent
-    def researcher(self) -> Agent:
+    def analyst(self) -> Agent:
         return Agent(
-            config=self.agents_config['researcher'],  # type: ignore[index]
+            config=self.agents_config['analyst'],
             verbose=True
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def consultant(self) -> Agent:
         return Agent(
-            # type: ignore[index]
-            config=self.agents_config['reporting_analyst'],
-            verbose=True
+            config=self.agents_config['consultant'],
+            verbose=True,
+            knowledge_sources=[json_source]
+        )
+
+    @agent
+    def searcher(self) -> Agent:
+        return Agent(
+            config=self.agents_config['searcher'],
+            verbose=True,
+            tools=[serper_dev_tool]
+        )
+
+    @agent
+    def summarizer(self) -> Agent:
+        return Agent(
+            config=self.agents_config['summarizer'],
+            verbose=True,
         )
 
     # To learn more about structured task outputs,
     # task dependencies, and task callbacks, check out the documentation:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
+
+    # @task
+    # def research_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['research_task'],  # type: ignore[index]
+    #     )
+
+    # @task
+    # def reporting_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['reporting_task'],  # type: ignore[index]
+    #         output_file='io/report.md'
+    #     )
+
     @task
-    def research_task(self) -> Task:
+    def analyst_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task'],  # type: ignore[index]
+            config=self.tasks_config['analyst_task'],
         )
 
     @task
-    def reporting_task(self) -> Task:
+    def consultant_task(self) -> Task:
         return Task(
-            config=self.tasks_config['reporting_task'],  # type: ignore[index]
-            output_file='io/report.md'
+            config=self.tasks_config['consultant_task'],
+        )
+
+    @task
+    def searcher_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['searcher_task'],
+        )
+
+    @task
+    def summarizer_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['summarizer_task'],
+            output_file='io/output.md'
         )
 
     @crew
@@ -66,4 +127,5 @@ class MovieRecommender():
             process=Process.sequential,
             verbose=True,
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
+            # knowledge_sources=[json_source]
         )
