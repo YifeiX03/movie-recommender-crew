@@ -24,7 +24,7 @@ def run():
     # }
 
     inputs = {
-        'query': "I want a recent comedy movie.",
+        'query': "I'm interested in animated superhero movies, what's a recent one?",
     }
 
     try:
