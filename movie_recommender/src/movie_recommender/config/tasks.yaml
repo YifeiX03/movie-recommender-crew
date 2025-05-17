@@ -37,8 +37,11 @@ searcher_task:
   description: >
     Given a list of movies, determine which ones are available in theatres currently,
     and report back on their availability.
+    Ask a human for their location so it is possible to find show times local to them.
+    Find movies playing now, the current date is: {current_date}.
+    Once you have the location there is no further need to interact with the human.
   expected_output: >
-    List of movie names and where they can be watched.
+    List of movie names and their availability in theatres.
   agent: searcher
 
 summarizer_task:

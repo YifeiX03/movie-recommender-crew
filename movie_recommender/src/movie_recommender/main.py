@@ -25,6 +25,7 @@ def run():
 
     inputs = {
         'query': "I'm interested in animated superhero movies, what's a recent one?",
+        'current_date': str(datetime.now().date)
     }
 
     try:
