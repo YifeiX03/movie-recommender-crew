@@ -5,6 +5,7 @@ from typing import List
 
 from crewai_tools import SerperDevTool
 from crewai.knowledge.source.json_knowledge_source import JSONKnowledgeSource
+from tools.movie_api_tool import MovieApiTool
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -14,6 +15,8 @@ json_source = JSONKnowledgeSource(
     file_paths=["test_movies.json",
                 "recent_test_movies.json"]
 )
+
+movie_tool = MovieApiTool()
 
 
 @CrewBase
@@ -35,7 +38,8 @@ class MovieRecommender():
         return Agent(
             config=self.agents_config['consultant'],
             verbose=True,
-            knowledge_sources=[json_source]
+            # knowledge_sources=[json_source]
+            tools=[movie_tool]
         )
 
     @agent
@@ -63,6 +67,7 @@ class MovieRecommender():
     def consultant_task(self) -> Task:
         return Task(
             config=self.tasks_config['consultant_task'],
+
         )
 
     @task

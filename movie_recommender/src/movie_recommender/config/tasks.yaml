@@ -27,8 +27,7 @@ analyst_task:
 
 consultant_task:
   description: >
-    Consult knowledge base for movies that match the descriptions provided.
-    Only use movies from the knowledge base.
+    Consult movie database api tool for movies that match the genre(s) provided.
   expected_output: >
     A list of movie names and a short explanation for why they were chosen.
   agent: consultant

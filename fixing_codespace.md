@@ -3,7 +3,7 @@ where when you try to start a crew it just won't
 
 following the instructions here\
 https://docs.crewai.com/installation\
-up until like here\
+up until like here
 ```
 crewai create crew <your_project_name>
 ```
