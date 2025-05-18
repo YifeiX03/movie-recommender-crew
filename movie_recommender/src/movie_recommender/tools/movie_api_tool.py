@@ -51,10 +51,13 @@ class MovieApiTool(BaseTool):
             else:
                 url += str(existingGenres[genre]) + ","
 
+        print("OUTGOING URL: \n" + url)
+
         headers = {
             "accept": "application/json",
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZTIzMGUxODMyMTk2N2Q0YTk1ZGQyOWRjNTE2ZWQ2ZCIsIm5iZiI6MTY3NzAzNzU4MS45ODgsInN1YiI6IjYzZjU5MDBkOWJjZDBmMDBjYzVmMzlkYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d5rMkCqBZpcHfixJEmiMOGPsX1BTPL-U7x7lyjxwdeo"
         }
 
         response = requests.get(url, headers=headers)
-        return str(response)
+        print("RESPONSE: \n" + response.text)
+        return str(response.text)
