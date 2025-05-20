@@ -3,6 +3,10 @@ from typing import Type, List
 from pydantic import BaseModel, Field
 import requests
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+MOVIEDB_API_KEY = os.getenv('MOVIEDB_API_KEY')
 
 existingGenres = {
     "Action": 28,
@@ -53,9 +57,10 @@ class MovieApiTool(BaseTool):
 
         print("OUTGOING URL: \n" + url)
 
+        API = "Bearer " + MOVIEDB_API_KEY
         headers = {
             "accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZTIzMGUxODMyMTk2N2Q0YTk1ZGQyOWRjNTE2ZWQ2ZCIsIm5iZiI6MTY3NzAzNzU4MS45ODgsInN1YiI6IjYzZjU5MDBkOWJjZDBmMDBjYzVmMzlkYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d5rMkCqBZpcHfixJEmiMOGPsX1BTPL-U7x7lyjxwdeo"
+            "Authorization":  API
         }
 
         response = requests.get(url, headers=headers)
