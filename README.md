@@ -27,15 +27,15 @@ graph TD
         summarizer[AI Summarizer]
     end
 
-    real_user -->|1. Natural Language Input| analyst
-    analyst -->|2. Forward movie details| consultant
-    consultant -->|3. Make API call| movie_db
-    movie_db -->|4. Return relevant movies| consultant
-    consultant -->|5. Send movies to searcher| searcher
-    searcher -->|6. Search for movies near user| serper_search_tool
-    serper_search_tool -->|7. Return with search results| searcher
-    searcher -->|8. Forward results to summarizer| summarizer
-    summarizer -->|9. Present user with finished report| real_user
+    real_user -->|1.Natural Language Input| analyst
+    analyst -->|2.Forward movie details| consultant
+    consultant -->|3.Make API call| movie_db
+    movie_db -->|4.Return relevant movies| consultant
+    consultant -->|5.Send movies to searcher| searcher
+    searcher -->|6.Search for movies near user| serper_search_tool
+    serper_search_tool -->|7.Return with search results| searcher
+    searcher -->|8.Forward results to summarizer| summarizer
+    summarizer -->|9.Present user with finished report| real_user
 
 
 ```
