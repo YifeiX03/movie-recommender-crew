@@ -65,9 +65,9 @@ sequenceDiagram
     searcher->>summarizer: Send results to summarizer
 ```
 
-## User cases
+<!-- ## User cases -->
 
-```mermaid
+<!-- ```mermaid
 sequenceDiagram
     participant real_user as Real User
     participant ai_scanner_system as AI Scanner System
@@ -87,4 +87,4 @@ sequenceDiagram
         expense_claim_system->>ai_scanner_system: Confirm claim submission
         ai_scanner_system->>real_user: Notify claim approval
     end
-```
+``` -->
