@@ -28,7 +28,7 @@ graph TD
     end
 
     real_user -->|1. Natural Language Input| analyst
-    scanner -->|2. Forward movie details| consultant
+    analyst -->|2. Forward movie details| consultant
     consultant -->|3. Make API call| movie_db
     movie_db -->|4. Return relevant movies| consultant
     consultant -->|5. Send movies to searcher| searcher
