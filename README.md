@@ -15,7 +15,6 @@ The crew works as such:
 ```mermaid
 graph TD
     real_user([Real User])
-    movie_recommendation_system[Movie Recommendation System]
     movie_db[Movie Database]
     serper_search_tool[Serper Search Tool]
 
@@ -32,7 +31,7 @@ graph TD
     consultant -->|3.Make API call| movie_db
     movie_db -->|4.Return relevant movies| consultant
     consultant -->|5.Send movies to searcher| searcher
-    searcher -->|6.Search for movies near user| serper_search_tool
+    searcher -->|6.Search for play times near user| serper_search_tool
     serper_search_tool -->|7.Return with search results| searcher
     searcher -->|8.Forward results to summarizer| summarizer
     summarizer -->|9.Present user with finished report| real_user
@@ -45,22 +44,25 @@ graph TD
 ```mermaid
 sequenceDiagram
     box AI_Scanner_System
-    participant scanner as AI Receipt Scanner
-    participant merchant_finder as AI Merchant Finder
-    participant decider as AI Policy Decider
+    participant analyst as Input Analyst
+    participant consultant as Movie Consultant
+    participant searcher as Movie Searcher
+    participant summarizer as Summarizer
     end
     box CrewAI Tools
-    participant vision as Vision Tool
-    participant search as Google Search Tool
+    participant search as Serper Search Tool
+    end
+    box External APIs
+    participant moviedb as Movie Database
     end
 
-    scanner->>vision: Send receipt image
-    vision->>scanner: Extract receipt details (merchant, time, amount)
-
-    scanner->>merchant_finder: Request merchant identification
-    merchant_finder->>search: Query merchant information
-    search->>merchant_finder: Provide merchant details (category, location)
-    merchant_finder->>decider: Forward merchant profile (category, location) and Rceipt Details
+    analyst->>consultant: Send Movie Preference Data
+    consultant->>moviedb: Make API call to database for relevant movies
+    moviedb->>consultant: Return with relevant movies
+    consultant->>searcher: Send movies to searcher
+    searcher->>search: Search for play times
+    search->>searcher: Return with play times
+    searcher->>summarizer: Send results to summarizer
 ```
 
 ## User cases
