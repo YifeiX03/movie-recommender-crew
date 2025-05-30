@@ -24,7 +24,7 @@ def run():
     # }
 
     inputs = {
-        'query': "I'm interested in a family movie, what's a recent one?",
+        'query': "I'm interested in a science-fiction movie, what's a recent one?",
         'current_date': str(datetime.now().date)
     }
 

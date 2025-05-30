@@ -63,6 +63,19 @@ class MovieApiTool(BaseTool):
             "Authorization":  API
         }
 
+        return_str = ""
         response = requests.get(url, headers=headers)
         print("RESPONSE: \n" + response.text)
-        return str(response.text)
+        response_json = response.json()
+        if 'results' not in response_json:
+            print("results not found in response json")
+            return "error, no results"
+        for result in response_json["results"]:
+            if 'original_title' not in result or 'overview' not in result:
+                print("fields not found")
+                return "error, expected fields missing"
+            return_str += "original_title: " + result["original_title"] + "\n"
+            return_str += "overview: " + result["overview"] + "\n"
+
+        print(return_str)
+        return return_str
