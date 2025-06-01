@@ -14,6 +14,19 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # interpolate any tasks and agents information
 
 
+def run_input(input: str) -> str:
+    inputs = {
+        'query': input,
+        'current_date': str(datetime.now().date)
+    }
+
+    try:
+        result = MovieRecommender().crew().kickoff(inputs=inputs)
+    except Exception as e:
+        raise Exception(f"An error occurred while running the crew: {e}")
+    return result
+
+
 def run():
     """
     Run the crew.
