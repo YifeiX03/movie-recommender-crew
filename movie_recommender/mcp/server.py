@@ -1,5 +1,5 @@
 from fastmcp import FastMCP
-from movie_recommender.crew import MovieRecommender
+from movie_recommender.main import run_input
 from datetime import datetime
 
 
@@ -20,13 +20,6 @@ def get_greeting(name: str) -> str:
 
 @mcp.tool()
 def call_crew(input: str) -> str:
-    inputs = {
-        'query': input,
-        'current_date': str(datetime.now().date)
-    }
-
-    try:
-        result = MovieRecommender().crew().kickoff(inputs=inputs)
-    except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
-    return result
+    # print(input)
+    result = run_input(input)
+    return result.raw

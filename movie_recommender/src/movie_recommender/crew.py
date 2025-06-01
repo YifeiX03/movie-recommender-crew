@@ -74,14 +74,14 @@ class MovieRecommender():
     def searcher_task(self) -> Task:
         return Task(
             config=self.tasks_config['searcher_task'],
-            human_input=True
+            # human_input=True
         )
 
     @task
     def summarizer_task(self) -> Task:
         return Task(
             config=self.tasks_config['summarizer_task'],
-            output_file='io/output.md'
+            output_file='io/output.txt'
         )
 
     @crew
