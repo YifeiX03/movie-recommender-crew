@@ -1,0 +1,2 @@
+movie tmdb https://developer.themoviedb.org/docs/getting-started
+serper https://serper.dev/dashboard
